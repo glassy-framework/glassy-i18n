@@ -1,0 +1,18 @@
+name: glassy-i18n
+version: 0.1.0
+
+dependencies:
+  i18n:
+    github: vladfaust/i18n.cr
+    version: ~> 0.1.1
+
+  glassy-kernel:
+    github: glassy-framework/glassy-kernel
+    branch: master
+
+authors:
+  - Anderson Danilo <contact@andersondanilo.com>
+
+crystal: 0.35.1
+
+license: MIT

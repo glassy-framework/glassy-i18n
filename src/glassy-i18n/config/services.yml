@@ -1,0 +1,18 @@
+services:
+  i18n.yaml_data:
+    class: Glassy::I18n::YAMLData
+    singleton: true
+    kwargs:
+      raw_yaml_data: '@i18n.yaml_data_raw'
+
+  i18n.backend:
+    class: Glassy::I18n::StaticYAMLBackend
+    singleton: true
+    kwargs:
+      data: '@i18n.yaml_data'
+
+  i18n.translator:
+    class: Glassy::I18n::Translator
+    kwargs:
+      backend: '@i18n.backend'
+      locale: '%context(locale):String?%'
