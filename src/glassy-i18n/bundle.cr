@@ -7,7 +7,7 @@ module Glassy::I18n
     HAS_CONTAINER_EXT = true
 
     macro apply_container_ext(all_bundles)
-      def i18n_yaml_data_raw : YAML::Any
+      def i18n_yaml_data_raw(context : Glassy::Kernel::Context? = nil) : YAML::Any
         Glassy::I18n::YAMLData.read_yaml_files([
           {% for bundle in all_bundles %}
             {% if bundle.resolve.constant("LOCALE_PATH") %}
